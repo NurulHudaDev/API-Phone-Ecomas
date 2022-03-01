@@ -1,24 +1,46 @@
 const searchButton = () =>{
-    const searchText = document.getElementById('seach-input').value;
-
+    const input = document.getElementById('seach-input');
+    const searchText = input.value;
+    const error = document.getElementById('error');
+    if(searchText == ''){
+        error.innerText = 'please type text';
+        mein.innerText = '';
+        
+    }
+    else if(searchText <= 0){
+        error.innerText = 'please type text';
+        input.value = '';
+        mein.innerText = '';
+    }
+    else{
         fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText}`)
         .then(res => res.json())
-        .then(data => phoneDisply(data))  
+        .then(data => phoneDisply(data.data.slice(0, 20))) 
+        input.value = '';
+        error.innerText = '';
+        mein.innerText = '';
+    }
+        
 }
 
 const phoneDisply = (phones) =>{
-    console.log(phones.data[0])
+    // console.log(phones.data[0])
     const mein = document.getElementById('mein');
-    const div = document.createElement('div');
-    div.innerHTML = `
-         <div class="card" style="width: 18rem;">
-                <img src="${phones.data[0].image}" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Phone Name: ${phones.data[0].phone_name}</h5>
-                  <p class="card-text">Bernd: ${phones.data[0].brand}</p>
-                  <button type="button" class="btn btn-primary">Details</button>
-                </div>
-        </div>
+    phones.forEach(phone => {
+        const div = document.createElement('div');
+        div.classList.add('col-lg-4');
+        div.classList.add('g-5');
+        div.innerHTML = `
+            <div class="card" style="width: 18rem;">
+            <img src="${phone.image}" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">Phone Name: ${phone.phone_name}</h5>
+            <p class="card-text">Bernd: ${phone.brand}</p>
+            <button type="button" class="btn btn-primary">Details</button>
+            </div>
+            </div>
     `
     mein.appendChild(div);
+    })
+    
 }
