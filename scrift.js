@@ -12,9 +12,6 @@ const searchButton = () =>{
         input.value = '';
         mein.innerText = '';
     }
-    else if(data.data === 0){
-        error.innerText = 'please type text';
-    }
     else{
         fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText}`)
         .then(res => res.json())
