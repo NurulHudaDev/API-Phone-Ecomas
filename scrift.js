@@ -18,8 +18,7 @@ const searchButton = () =>{
         error.innerText = '';
         mein.innerText = '';
         details.innerText = '';
-    }
-        
+    }     
 }
 // main card
 const phoneDisply = (phones) =>{
@@ -44,7 +43,6 @@ const phoneDisply = (phones) =>{
     if(phones == 0){
         error.innerText = 'Result not found'; 
     }
-    
 }
 // details
 const detailsButton = (id) =>{
@@ -64,17 +62,17 @@ const detailsDisply = (info) =>{
     <div class="card-body">
     <img src="${info.image}" class="card-img-top" alt="...">
     <div class="mt-4">
-    <p><span class="fw-bold">Brand: </span>${info.brand}</p>
-    <p><span class="fw-bold">name: </span>${info.name}</p>
-    <p><span class="fw-bold">storage: </span>${info.mainFeatures.storage}</p>
-    <p><span class="fw-bold">chipSet: </span>${info.mainFeatures.chipSet}</p>
-    <p><span class="fw-bold">display Size: </span>${info.mainFeatures.displaySize}</p>
-    <p><span class="fw-bold">memory: </span>${info.mainFeatures.memory}</p>
-    <p><span class="fw-bold">sensors: </span>${info.mainFeatures.sensors}</p>
-    <h5 class="fw-bold">others</h5>
+        <p><span class="fw-bold">Brand: </span>${info.brand}</p>
+        <p><span class="fw-bold">name: </span>${info.name}</p>
+        <p><span class="fw-bold">storage: </span>${info.mainFeatures.storage}</p>
+        <p><span class="fw-bold">chipSet: </span>${info.mainFeatures.chipSet}</p>
+        <p><span class="fw-bold">display Size: </span>${info.mainFeatures.displaySize}</p>
+        <p><span class="fw-bold">memory: </span>${info.mainFeatures.memory}</p>
+        <p><span class="fw-bold">sensors: </span>${info.mainFeatures.sensors}</p>
     <div>
    <div>
-   <p><span class="fw-bold">release Date: </span>${info.releaseDate ? info.releaseDate : 'Not release date'} </p>
+   <h5 class="fw-bold">others</h5>
+      <p><span class="fw-bold">release Date: </span>${info.releaseDate ? info.releaseDate : 'Not release date'} </p>
       <p><span class="fw-bold">Bluetooth: </span>${info.Bluetooth ? info.Bluetooth : 'Not release date'}</p>
       <p><span class="fw-bold">GPS: </span>${info.GPS ? info.GPS : 'Not release date'}</p>
       <p><span class="fw-bold">NFC: </span>${info.NFC ? info.NFC : 'Not release date'}</p>
