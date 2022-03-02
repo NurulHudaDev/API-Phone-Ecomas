@@ -63,23 +63,23 @@ const detailsDisply = (info) =>{
     <img src="${info.image}" class="card-img-top" alt="...">
     <div class="mt-4">
         <p><span class="fw-bold">Brand: </span>${info.brand}</p>
-        <p><span class="fw-bold">name: </span>${info.name}</p>
-        <p><span class="fw-bold">storage: </span>${info.mainFeatures.storage}</p>
-        <p><span class="fw-bold">chipSet: </span>${info.mainFeatures.chipSet}</p>
-        <p><span class="fw-bold">display Size: </span>${info.mainFeatures.displaySize}</p>
-        <p><span class="fw-bold">memory: </span>${info.mainFeatures.memory}</p>
-        <p><span class="fw-bold">sensors: </span>${info.mainFeatures.sensors}</p>
+        <p><span class="fw-bold">Name: </span>${info.name}</p>
+        <p><span class="fw-bold">Storage: </span>${info.mainFeatures.storage}</p>
+        <p><span class="fw-bold">ChipSet: </span>${info.mainFeatures.chipSet}</p>
+        <p><span class="fw-bold">Display Size: </span>${info.mainFeatures.displaySize}</p>
+        <p><span class="fw-bold">Memory: </span>${info.mainFeatures.memory}</p>
+        <p><span class="fw-bold">Sensors: </span>${info.mainFeatures.sensors}</p>
     <div>
    <div>
-   <h5 class="fw-bold">others</h5>
-      <p><span class="fw-bold">release Date: </span>${info.releaseDate ? info.releaseDate : 'Not release date'} </p>
+   <h5 class="fw-bold">Others</h5>
+      <p><span class="fw-bold">Release Date: </span>${info.releaseDate ? info.releaseDate : 'Not release date'} </p>
       <p><span class="fw-bold">Bluetooth: </span>${info.Bluetooth ? info.Bluetooth : 'Not release date'}</p>
       <p><span class="fw-bold">GPS: </span>${info.GPS ? info.GPS : 'Not release date'}</p>
       <p><span class="fw-bold">NFC: </span>${info.NFC ? info.NFC : 'Not release date'}</p>
       <p><span class="fw-bold">Radio: </span>${info.Radio ? info.Radio : 'Not release date'}</p>
       <p><span class="fw-bold">USB: </span>${info.USB ? info.USB : 'Not release date'}</p>
       <p><span class="fw-bold">WLAN: </span>${info.WLAN ? info.WLAN : 'Not release date'}</p>
-      <p><span class="fw-bold">slug: </span>${info.slug ? info.slug: 'Not release date'}</p>
+      <p><span class="fw-bold">Slug: </span>${info.slug ? info.slug: 'Not release date'}</p>
    </div>
    </div>
   </div>
