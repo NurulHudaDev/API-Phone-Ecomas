@@ -1,7 +1,9 @@
 const searchButton = () =>{
+    // search input
     const input = document.getElementById('seach-input');
     const searchText = input.value;
     const error = document.getElementById('error');
+    // error
     if(searchText == ''){
         error.innerText = 'please type text';
         mein.innerText = '';
@@ -19,9 +21,8 @@ const searchButton = () =>{
     }
         
 }
-
+// main card
 const phoneDisply = (phones) =>{
-    // console.log(phones.data[0])
     const mein = document.getElementById('mein');
     phones.forEach(phone => {
         const div = document.createElement('div');
@@ -39,45 +40,49 @@ const phoneDisply = (phones) =>{
     `
     mein.appendChild(div);
     })
+    // error
     if(phones == 0){
         error.innerText = 'Result not found'; 
     }
     
 }
-
+// details
 const detailsButton = (id) =>{
     fetch(`https://openapi.programming-hero.com/api/phone/${id}`)
     .then(res => res.json())
     .then(data => detailsDisply(data.data))
     details.innerHTML = ''
 }
-
+// details card
 const detailsDisply = (info) =>{
     console.log(info);
     const details = document.getElementById('details');
     const div = document.createElement('div');
+    // details
     div.innerHTML = `
     <div class="card" style="width: 20rem;">
     <div class="card-body">
     <img src="${info.image}" class="card-img-top" alt="...">
     <div class="mt-4">
-    <p><span class="fw-bold">releaseDate: </span>${info.others.releaseDate ? info.others.releaseDate : 'Not release date'} </p>
     <p><span class="fw-bold">Brand: </span>${info.brand}</p>
     <p><span class="fw-bold">name: </span>${info.name}</p>
     <p><span class="fw-bold">storage: </span>${info.mainFeatures.storage}</p>
     <p><span class="fw-bold">chipSet: </span>${info.mainFeatures.chipSet}</p>
-    <p><span class="fw-bold">displaySize: </span>${info.mainFeatures.displaySize}</p>
+    <p><span class="fw-bold">display Size: </span>${info.mainFeatures.displaySize}</p>
     <p><span class="fw-bold">memory: </span>${info.mainFeatures.memory}</p>
     <p><span class="fw-bold">sensors: </span>${info.mainFeatures.sensors}</p>
-    <p class="fw-bold">others</p>
+    <h5 class="fw-bold">others</h5>
+    <div>
    <div>
-      <p><span class="fw-bold">Bluetooth: </span>${info.others.Bluetooth}</p>
-      <p><span class="fw-bold">GPS: </span>${info.others.GPS}</p>
-      <p><span class="fw-bold">NFC: </span>${info.others.NFC}</p>
-      <p><span class="fw-bold">Radio: </span>${info.others.Radio}</p>
-      <p><span class="fw-bold">USB: </span>${info.others.USB}</p>
-      <p><span class="fw-bold">WLAN: </span>${info.others.WLAN}</p>
-      <p><span class="fw-bold">slug: </span>${info.others.slug ? info.others.slug: 'Not release date'}</p>
+   <p><span class="fw-bold">release Date: </span>${info.releaseDate ? info.releaseDate : 'Not release date'} </p>
+      <p><span class="fw-bold">Bluetooth: </span>${info.Bluetooth ? info.Bluetooth : 'Not release date'}</p>
+      <p><span class="fw-bold">GPS: </span>${info.GPS ? info.GPS : 'Not release date'}</p>
+      <p><span class="fw-bold">NFC: </span>${info.NFC ? info.NFC : 'Not release date'}</p>
+      <p><span class="fw-bold">Radio: </span>${info.Radio ? info.Radio : 'Not release date'}</p>
+      <p><span class="fw-bold">USB: </span>${info.USB ? info.USB : 'Not release date'}</p>
+      <p><span class="fw-bold">WLAN: </span>${info.WLAN ? info.WLAN : 'Not release date'}</p>
+      <p><span class="fw-bold">slug: </span>${info.slug ? info.slug: 'Not release date'}</p>
+   </div>
    </div>
   </div>
     </div>
