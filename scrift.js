@@ -42,6 +42,9 @@ const phoneDisply = (phones) =>{
     `
     mein.appendChild(div);
     })
+    if(phones == 0){
+        error.innerText = 'Result not found'; 
+    }
     
 }
 
