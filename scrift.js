@@ -5,12 +5,8 @@ const searchButton = () =>{
     if(searchText == ''){
         error.innerText = 'please type text';
         mein.innerText = '';
+        details.innerText = '';
         
-    }
-    else if(searchText <= 0){
-        error.innerText = 'please type text';
-        input.value = '';
-        mein.innerText = '';
     }
     else{
         fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText}`)
@@ -19,6 +15,7 @@ const searchButton = () =>{
         input.value = '';
         error.innerText = '';
         mein.innerText = '';
+        details.innerText = '';
     }
         
 }
@@ -64,6 +61,7 @@ const detailsDisply = (info) =>{
     <div class="card-body">
     <img src="${info.image}" class="card-img-top" alt="...">
     <div class="mt-4">
+    <p><span class="fw-bold">releaseDate: </span>${info.others.releaseDate ? info.others.releaseDate : 'Not release date'} </p>
     <p><span class="fw-bold">Brand: </span>${info.brand}</p>
     <p><span class="fw-bold">name: </span>${info.name}</p>
     <p><span class="fw-bold">storage: </span>${info.mainFeatures.storage}</p>
@@ -79,8 +77,7 @@ const detailsDisply = (info) =>{
       <p><span class="fw-bold">Radio: </span>${info.others.Radio}</p>
       <p><span class="fw-bold">USB: </span>${info.others.USB}</p>
       <p><span class="fw-bold">WLAN: </span>${info.others.WLAN}</p>
-      <p><span class="fw-bold">releaseDate: </span>${info.others.releaseDate}</p>
-      <p><span class="fw-bold">slug: </span>${info.others.slug}</p>
+      <p><span class="fw-bold">slug: </span>${info.others.slug ? info.others.slug: 'Not release date'}</p>
    </div>
   </div>
     </div>
